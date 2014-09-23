@@ -1,0 +1,32 @@
+We can describe the grammar of picobot as follows:
+
+We begin by describing the possible letters for each space in a situation
+specification
+
+letter = "A" | "B" | "C" | "D" | "E" | "F" | "G"
+       | "H" | "I" | "J" | "K" | "L" | "M" | "N"
+       | "O" | "P" | "Q" | "R" | "S" | "T" | "U"
+       | "V" | "W" | "X" | "Y" | "Z" | " ";
+
+directionsN = "N" | "x" | "*";
+directionsS = "S" | "x" | "*";
+directionsE = "E" | "x" | "*";
+directionsW = "W" | "x" | "*";
+moveDirections = "N" | "S" | "E" | "W";
+
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+state = [digit], digit;
+space = " ";
+
+comment = "#", {letter};
+
+surroundings = directionsN, directionsE, directionsW, directionsS;
+
+initialState = state, space, surroundings, space;
+
+finalState = space, moveDirections, state;
+
+rule = initialState, "->", finalState, space, [comment];
+commentLine = comment;
+
+program = {rule | commentLine}
