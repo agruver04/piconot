@@ -1,0 +1,21 @@
+We can describe the grammar of our ideal language as follows.
+
+nonZero-digit =  "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+digit =  "0" | nonZero-digit ;
+state = [nonZero-digit], digit;
+north = ["!"], "N";
+east = ["!"], "E";
+west = ["!"], "W";
+south = ["!"], "S";
+direction = "N" | "E" | "W" | "S";
+
+wallSpecification = [north, " "], [east, " "], [west, " "], [south, " "];
+
+
+ruleBeginning = "if ";
+stateCheck = "state is ", state, " ", "and ";
+wallCheck = "walls are ", wallSpecification;
+command = "then move ", direction, "and enter state ", state;
+
+
+rule = ruleBeginning, [stateCheck], wallCheck, command;

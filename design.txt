@@ -1,16 +1,42 @@
 Who is the target for this design, e.g., are you assuming any knowledge on the
 part of the language users?
 
+We're designing this language to appeal to people who are new to computer
+science. We want our rules to read like sentences, which should make the
+language easier to use for people without a lot of programming experience.
+
 Why did you choose this design, i.e., why did you think it would be a good idea
 for users to express the maze-searching computation using this syntax?
+
+We think that this design is a good idea because it will allow users to easily
+reason about the effects of their rules. This syntax makes a trade off - we
+express the rules in a way that is easy to reason about, which requires the
+programmer to do more typing than they would have to do in a normal language.
 
 What behaviors are easier to express in your design than in Picobot’s original
 design?  If there are no such behaviors, why not?
 
+I don't think that there are many behaviors which are much easier to express in
+our design. We want to make the state declaration optional, which should make
+it easier to have an "abort state". Other than that we aren't changing the
+nature of the language, just making it easier to understand.
+
 What behaviors are more difficult to express in your design than in Picobot’s
 original design? If there are no such behaviors, why not?
+
+Everything in our design is "more difficult to express" since you have to type
+out long sentences to get identical behaviors to picobot. The tradeoff is that
+our design makes the entire list of rules more easy to reason about.
 
 On a scale of 1–10 (where 10 is “very different”), how different is your syntax
 from PicoBot’s original design?
 
+I would say that our language is probably a 4-5. We're changing the syntax of
+the language but the style of thought for constructing rules should be exactly
+the same. It's not like we're turning a functional language into an object
+oriented one.
+
 Is there anything you don’t like about your design?
+I would have loved to have come up with something radically different that
+what picobot is now, but we couldn't think of a useful way to do that and this
+redesign of the language definitely adds something useful.
