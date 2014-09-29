@@ -19,3 +19,5 @@ command = "then move ", direction, "and enter state ", state;
 
 
 rule = ruleBeginning, [stateCheck], wallCheck, command;
+
+program = "Make Bot", "{", rule, {", ", rule}, "}";
