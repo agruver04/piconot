@@ -31,3 +31,11 @@ us feel bad as human beings, but at least our syntax works.
 Finally, we had to include some JFXApp stuff into the user’s program that we didn’t 
 want to, but couldn’t find a good way to put in a different file and still make the 
 user’s file runnable.
+
+I'd say that overall our grammar changed about a 3 from our dream to the actual 
+implementation. We decided to make some minor adjustments to make our lives
+significantly easier but other than that nothing really changed. I think this 
+DSL was about a 5 in terms of difficulty to implement, just because of the sheer 
+madness of what we're doing with all the nested methods. We also took multiple
+iterations to get to a point where the grammar would actually compile the way
+we wanted it to. 
