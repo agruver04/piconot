@@ -1,11 +1,33 @@
-Our first task was to write a variation function Make_bot which takes in Rules as arguments and creates a picobot on the empty maze. We will replace the Rules with our own syntax for defining picobot rules as the next step, and will also need to provide some way for defining the maze that the picobot is supposed to solve. Our first change to our ideal syntax was to define Make_bot as a function with an underscore and taking arguments using parentheses, rather than the more sentence-like syntax we originally planned. Additionally, we needed to pass in the maze that the bot would run on, which is sent as a string name of the text file.
+Our first task was to write a variation function Make_bot which takes in Rules as 
+arguments and creates a picobot on the empty maze. We will replace the Rules with 
+our own syntax for defining picobot rules as the next step, and will also need to 
+provide some way for defining the maze that the picobot is supposed to solve. Our 
+first change to our ideal syntax was to define Make_bot as a function with an underscore 
+and taking arguments using parentheses, rather than the more sentence-like syntax we 
+originally planned. Additionally, we needed to pass in the maze that the bot would 
+run on, which is sent as a string name of the text file.
 
-Next, we changed the start word of our rule creation to “when” rather than “if” in order to define it as a function without worrying about overloading the Scala reserved word.
+Next, we changed the start word of our rule creation to “when” rather than “if” in
+order to define it as a function without worrying about overloading the Scala 
+reserved word.
 
-Third, we realized that we need quotation marks around our wall definitions (e.g. “N!ES”) in order to pass them as string literals.
+Third, we realized that we need quotation marks around our wall definitions 
+(e.g. “N!ES”) in order to pass them as string literals.
 
-As we defined the syntax, many of the “words” were empty functions which simply did nothing, returning the same RuleObject as if they hadn’t been called.
+As we defined the syntax, many of the “words” were empty functions 
+which simply did nothing, returning the same RuleObject as if they hadn’t 
+been called.
 
-Now comes the crazy stuff. In order to make postfix notation work to create the sentence-like structure we intended, we needed to ensure that every method took a single argument. Otherwise, it would try to pass the next method call as an argument to our parameterless method when we chained the calls together. To enable this behavior, we defined many of the words in our rule-creating sentences as actual values, which were passed as arguments to the methods defined by the preceding words. This meant some really weird things, like that we had to worry about the parity of the number of words between actual input like state and surroundings. This makes us feel bad as human beings, but at least our syntax works.
+Now comes the crazy stuff. In order to make postfix notation work to create the 
+sentence-like structure we intended, we needed to ensure that every method took 
+a single argument. Otherwise, it would try to pass the next method call as an 
+argument to our parameterless method when we chained the calls together. To enable 
+this behavior, we defined many of the words in our rule-creating sentences as 
+actual values, which were passed as arguments to the methods defined by the preceding 
+words. This meant some really weird things, like that we had to worry about the parity 
+of the number of words between actual input like state and surroundings. This makes 
+us feel bad as human beings, but at least our syntax works.
 
-Finally, we had to include some JFXApp stuff into the user’s program that we didn’t want to, but couldn’t find a good way to put in a different file and still make the user’s file runnable.
+Finally, we had to include some JFXApp stuff into the user’s program that we didn’t 
+want to, but couldn’t find a good way to put in a different file and still make the 
+user’s file runnable.
