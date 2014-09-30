@@ -8,7 +8,7 @@ letter = "A" | "B" | "C" | "D" | "E" | "F" | "G"
        | "O" | "P" | "Q" | "R" | "S" | "T" | "U"
        | "V" | "W" | "X" | "Y" | "Z" ;
 
-filename = {letter}, .txt;
+filename = letter, {letter}, ".txt";
 north = ["!"], "N";
 east = ["!"], "E";
 west = ["!"], "W";
@@ -18,7 +18,7 @@ direction = "North" | "East" | "West" | "South";
 wallSpecification = [north, " "], [east, " "], [west, " "], [south, " "];
 
 
-ruleBeginning = "if ";
+ruleBeginning = "when ";
 stateCheck = "state is ", state, " ", "and ";
 wallCheck = "walls are ", wallSpecification;
 moveCommand = "then move ", direction;
