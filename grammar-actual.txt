@@ -26,4 +26,4 @@ stateCommand =  "and enter state ", state;
 
 rule = ruleBeginning, [stateCheck], wallCheck, moveCommand, [stateCommand];
 
-program = "Make_bot(", filename, {rule, ", "}, ")";
+program = "Make_bot(", filename, {", ", rule}, ")";
